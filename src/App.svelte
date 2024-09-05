@@ -9,6 +9,7 @@
   import Contact from "./pages/Contact.svelte";
   import { Canvas } from "@threlte/core";
   import ThrelteDynamicBackground from "./components/ThrelteDynamicBackground.svelte";
+  import Login from "./pages/Login.svelte";
 
   let navbar_paths = [
     { path: "/", text: "Main" },
@@ -22,6 +23,7 @@
     "/projects": Projects,
     "/readme": ReadMe,
     "/contact": Contact,
+    "/login": Login,
     "/*": Page404,
   };
 </script>
@@ -40,6 +42,7 @@
       <a class="social-link" href="#/">RDDT</a>
       <a class="social-link" href="#/">LKDN</a>
     </LayoutFlexRow>
+    <a class="social-link" href="#/login">ADMN</a>
   </div>
   <div class="aaa">
     <Router {routes} />
