@@ -13,3 +13,11 @@ export function login(email, password) {
       const errorMessage = error.message;
     });
 }
+
+export function checkLoggedIn() {
+  return auth.currentUser != null;
+}
+
+export function getCurrentUser() {
+  return auth.currentUser;
+}
