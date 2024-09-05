@@ -41,11 +41,12 @@
   }
 
   .project-title {
+    font-weight: 400;
     transition: all 1s;
   }
 
   .project-title:hover {
     cursor: pointer;
-    font-weight: 400;
+    font-weight: 900;
   }
 </style>
