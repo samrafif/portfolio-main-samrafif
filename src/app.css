@@ -4,6 +4,11 @@
   font-display: auto;
 }
 
+* {
+  font-family: clashDisplay;
+  line-height: 1.5;
+}
+
 :root {
   --cursor-color: white;
   --bg-color: black;
@@ -11,9 +16,6 @@
 
   --init-col: #0b004b;
   --end-col: #48005a;
-  font-family: clashDisplay;
-  line-height: 1.5;
-  font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -38,21 +40,24 @@ body {
   background-color: var(--bg-color);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
   /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+}
+
+a {
+  text-decoration: inherit;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: all 1s;
+}
+
+a:hover {
+  font-weight: 800;
+  color: var(--text-color);
 }
 
 p {
