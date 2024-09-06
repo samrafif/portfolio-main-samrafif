@@ -60,7 +60,6 @@
 <style>
   .readme-container {
     width: 90%;
-    margin-left: 7%;
   }
 
   .readme-header-title {
@@ -90,5 +89,11 @@
   .readme-header-title > strong:hover {
     font-weight: 900;
     cursor: pointer;
+  }
+
+  @media screen and (max-width: 850px) {
+    .readme-list {
+      width: 100%;
+    }
   }
 </style>
