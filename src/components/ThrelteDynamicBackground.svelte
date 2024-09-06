@@ -46,7 +46,7 @@
   <T.MeshStandardMaterial color="darkblue" />
 </T.Mesh>
 
-<T.Mesh
+<!-- <T.Mesh
   rotation.y={rotation}
   position.y={$scale}
   position.x={10}
@@ -62,4 +62,4 @@
 <T.Mesh rotation.x={-Math.PI / 2} position.x={10} receiveShadow>
   <T.CircleGeometry args={[4, 40]} />
   <T.MeshStandardMaterial color="darkblue" />
-</T.Mesh>
+</T.Mesh> -->

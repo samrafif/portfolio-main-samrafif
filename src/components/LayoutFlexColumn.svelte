@@ -1,5 +1,5 @@
 <script>
-  export let gap;
+  export let gap = "8px";
 </script>
 
 <div

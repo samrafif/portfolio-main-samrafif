@@ -1,14 +1,17 @@
 <script>
-  export let gap;
+  export let gap = "8px";
+  export let wrap = "nowrap";
 </script>
 
-<div class="layout-flexrow" style="display: flex; gap: {gap};">
+<div
+  class="layout-flexrow"
+  style="display: flex; gap: {gap}; flex-wrap: {wrap};"
+>
   <slot></slot>
 </div>
 
-<!-- <style lang="scss">
+<!-- <style>
   .layout-flexrow {
-    display: flex;
-    gap: {gap};
+    
   }
 </style> -->
