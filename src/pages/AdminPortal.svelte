@@ -32,10 +32,12 @@
             Welcome Back Bang Admin {getCurrentUser().email.split("@")[0]}!!!
           </h1>
           <p>I missed you, ya know?</p>
-          <a href="#/blog-writer"
+          <a href="#/admin/blog-writer"
             ><button><p>Write a blog article</p></button></a
           >
+          <h1>Blogs</h1>
           <BlogList />
+          <h1>Contact Messages</h1>
         </LayoutFlexColumn>
       {:else}
         <div class="login-modal">
