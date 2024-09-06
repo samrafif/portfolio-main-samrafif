@@ -22,10 +22,13 @@
       <div class="layout-flex-column">
         {#each $projects as project, i}
           <div class="project-item">
-            <h1 class="project-title">{project.title}</h1>
-            <p>{@html project.short_desc}</p>
-            <b>/{project.write_date.split("/")[2]}</b>
+            <a href="#/blog/{project.id}"
+              ><h1 class="project-title">{project.data.title}</h1></a
+            >
+            <p>{@html project.data.short_desc}</p>
+            <b>/{project.data.write_date.split("/")[2]}</b>
           </div>
+          <br />
         {/each}
       </div>
     </div>
@@ -38,7 +41,6 @@
   } */
 
   .layout-flex-column {
-    margin-left: 7%;
     display: flex;
     flex-direction: column;
   }
@@ -51,5 +53,15 @@
   .project-title:hover {
     cursor: pointer;
     font-weight: 900;
+  }
+
+  @media screen and (max-width: 850px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
   }
 </style>

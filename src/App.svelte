@@ -9,7 +9,9 @@
   import Contact from "./pages/Contact.svelte";
   import { Canvas } from "@threlte/core";
   import ThrelteDynamicBackground from "./components/ThrelteDynamicBackground.svelte";
-  import Login from "./pages/Login.svelte";
+  import AdminPortal from "./pages/AdminPortal.svelte";
+  import BlogWriter from "./pages/BlogWriter.svelte";
+  import BlogViewer from "./pages/BlogViewer.svelte";
 
   let navbar_paths = [
     { path: "/", text: "Main" },
@@ -23,7 +25,9 @@
     "/projects": Projects,
     "/readme": ReadMe,
     "/contact": Contact,
-    "/login": Login,
+    "/admin": AdminPortal,
+    "/admin/blog-writer/:blog_id?": BlogWriter,
+    "/blog/:blog_id": BlogViewer,
     "/*": Page404,
   };
 </script>
@@ -34,7 +38,7 @@
       <ThrelteDynamicBackground />
     </Canvas>
   </div>
-  <div class="bbb">
+  <div class="navigation">
     <Navbar paths={navbar_paths} />
     <LayoutFlexRow gap="18px">
       <a class="social-link" href="#/">GTHB</a>
@@ -42,15 +46,16 @@
       <a class="social-link" href="#/">RDDT</a>
       <a class="social-link" href="#/">LKDN</a>
     </LayoutFlexRow>
-    <a class="social-link" href="#/login">ADMN</a>
+    <a class="social-link" href="#/admin">ADMN</a>
   </div>
-  <div class="aaa">
+  <div class="main-content">
     <Router {routes} />
   </div>
 </main>
 
 <style>
   .canvas-container {
+    /* visibility: hidden; */
     position: absolute;
     right: 0;
     bottom: 0;
@@ -69,14 +74,23 @@
     font-weight: 900;
   }
 
-  .aaa {
+  .main-content {
+    margin-left: 7%;
     margin-top: 4rem;
     color: var(--text-color);
   }
-  .bbb {
+
+  .navigation {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
+  }
+
+  @media screen and (max-width: 850px) {
+    .main-content {
+      margin-left: 0;
+      color: var(--text-color);
+    }
   }
 </style>

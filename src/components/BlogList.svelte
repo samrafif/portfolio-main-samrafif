@@ -15,9 +15,9 @@
 
 <main>
   {#each $blogs as blog, i}
-    <h2>{blog.title}</h2>
-    <p>{blog.short_desc}</p>
-    <p class="blog-date">{blog.write_date}</p>
+    <a href="#/admin/blog-writer/{blog.id}"><h2>{blog.data.title}</h2></a>
+    <p>{blog.data.short_desc}</p>
+    <p class="blog-date">{blog.data.write_date}</p>
   {/each}
 </main>
 
