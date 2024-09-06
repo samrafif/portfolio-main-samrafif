@@ -2,7 +2,7 @@
   import { OnMount } from "fractils";
   import Typewriter from "svelte-typewriter";
   import { fly } from "svelte/transition";
-  import MainImg from "../assets/Frame 1.png";
+  import MainImg from "../assets/file.png";
 </script>
 
 <main class="main-header-container">
@@ -59,6 +59,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 5vh;
+    margin-right: 5rem;
   }
 
   .main-header-img {
@@ -75,13 +77,6 @@
     font-size: 5rem;
   }
 
-  .main-header {
-    margin: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
   p {
     margin: 0;
     font-size: 24px;
@@ -93,5 +88,36 @@
 
   .skill-text {
     font-weight: 400;
+  }
+
+  .main-header {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 850px) {
+    .main-header {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      margin: 0;
+      width: 100%;
+    }
+
+    .main-header-img {
+      width: 100%;
+    }
+
+    .detail-text {
+      width: 100%;
+    }
+
+    .main-header-container {
+      margin-right: 0;
+    }
   }
 </style>
