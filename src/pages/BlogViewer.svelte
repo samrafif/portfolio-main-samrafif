@@ -38,9 +38,19 @@
 
 <style>
   .article-container {
-    margin-left: 7%;
+    margin-right: 10%;
   }
   .article-content {
     margin-top: 2%;
+  }
+
+  :global(code) {
+    text-wrap: wrap;
+  }
+
+  @media screen and (max-width: 850px) {
+    h1 {
+      font-size: 2.5rem;
+    }
   }
 </style>

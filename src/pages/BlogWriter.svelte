@@ -45,7 +45,7 @@
       marked(article_writer_data.markdown_body),
       article_writer_data.type,
       article_writer_data.markdown_body,
-      // HACK: Hacky wacky
+      // HACK: Hacky wacky wawning OwO
       article_writer_data.tags.toString().split(","),
     ];
     if (!params.blog_id) {
@@ -63,7 +63,7 @@
 <OnMount>
   <main in:fly={{ y: -50, duration: 1000 }}>
     <div class="toolbar">
-      <LayoutFlexRow gap="8px">
+      <LayoutFlexRow wrap="wrap" gap="8px">
         <input
           bind:value={article_writer_data.title}
           placeholder="Article title"

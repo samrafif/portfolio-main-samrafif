@@ -12,6 +12,7 @@
   import AdminPortal from "./pages/AdminPortal.svelte";
   import BlogWriter from "./pages/BlogWriter.svelte";
   import BlogViewer from "./pages/BlogViewer.svelte";
+  import MediaQuery from "./components/MediaQuery.svelte";
 
   let navbar_paths = [
     { path: "/", text: "Main" },
@@ -34,17 +35,29 @@
 
 <main>
   <div class="canvas-container">
-    <Canvas>
+    <!-- <Canvas>
       <ThrelteDynamicBackground />
-    </Canvas>
+    </Canvas> -->
   </div>
   <div class="navigation">
     <Navbar paths={navbar_paths} />
     <LayoutFlexRow gap="18px">
-      <a class="social-link" href="#/">GTHB</a>
-      <a class="social-link" href="#/">INST</a>
-      <a class="social-link" href="#/">RDDT</a>
-      <a class="social-link" href="#/">LKDN</a>
+      <MediaQuery query="screen and (max-width: 850px)" let:matches>
+        {#if matches}
+          <a class="social-link" href="#/">GH</a>
+          <a class="social-link" href="#/">IG</a>
+          <a class="social-link" href="#/">RD</a>
+          <a class="social-link" href="#/">LK</a>
+        {/if}
+      </MediaQuery>
+      <MediaQuery query="screen and not (max-width: 850px)" let:matches>
+        {#if matches}
+          <a class="social-link" href="#/">GTHB</a>
+          <a class="social-link" href="#/">INST</a>
+          <a class="social-link" href="#/">RDDT</a>
+          <a class="social-link" href="#/">LKDN</a>
+        {/if}
+      </MediaQuery>
     </LayoutFlexRow>
     <a class="social-link" href="#/admin">ADMN</a>
   </div>
