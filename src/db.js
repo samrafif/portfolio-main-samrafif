@@ -7,32 +7,30 @@ import {
   getDoc,
   doc,
   updateDoc,
+  and,
 } from "firebase/firestore";
 import { firestore } from "./firebase";
 
 const article_ref = collection(firestore, "blog-articles");
 
-export async function listAllBlogs() {
-  let blogs = [];
-  const querySnapshot = await getDocs(article_ref);
+async function listDocs(ref, query_selector = null) {
+  let queryObj = query_selector ? query(ref, query_selector) : query(ref);
+
+  let docs = [];
+  const querySnapshot = await getDocs(queryObj);
   querySnapshot.forEach((doc) => {
-    // console.log(doc.id, " => ", doc.data());
-    // TODO: MAKE DRY CODE BUDDY
-    blogs.push({ data: doc.data(), id: doc.id });
+    docs.push({ data: doc.data(), id: doc.id });
   });
-  return blogs;
+
+  return docs;
 }
 
-export async function listProjects() {
-  let projects = [];
-  let query_obj = query(article_ref, where("type", "==", "project"));
-  const querySnapshot = await getDocs(query_obj);
-  querySnapshot.forEach((doc) => {
-    // console.log(doc.id, " => ", doc.data());
-    // TODO: MAKE DRY CODE BUDDY
-    projects.push({ data: doc.data(), id: doc.id });
-  });
-  return projects;
+export async function listAllBlogs() {
+  return listDocs(article_ref);
+}
+
+export async function listPublishedBlogs() {
+  return listDocs(article_ref, where("published", "==", true));
 }
 
 export async function createArticle(
@@ -72,7 +70,6 @@ export async function getArticle(article_id) {
   if (docSnap.exists()) {
     return { data: docSnap.data(), id: docSnap.id };
   } else {
-    // docSnap.data() will be undefined in this case
     return false;
   }
 }
