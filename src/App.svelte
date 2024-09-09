@@ -1,7 +1,7 @@
 <script>
   import Router from "svelte-spa-router";
   import Home from "./pages/Main.svelte";
-  import Projects from "./pages/Projects.svelte";
+  import Blogs from "./pages/Blogs.svelte";
   import ReadMe from "./pages/ReadMe.svelte";
   import Navbar from "./components/Navbar.svelte";
   import Page404 from "./pages/Page404.svelte";
@@ -16,14 +16,14 @@
 
   let navbar_paths = [
     { path: "/", text: "Main" },
-    { path: "/projects", text: "Projects" },
     { path: "/readme", text: "ReadMe" },
+    { path: "/blog", text: "Blog" },
     { path: "/contact", text: "Contact" },
   ];
 
   const routes = {
     "/": Home,
-    "/projects": Projects,
+    "/blog": Blogs,
     "/readme": ReadMe,
     "/contact": Contact,
     "/admin": AdminPortal,
