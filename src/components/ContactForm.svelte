@@ -4,16 +4,13 @@
 
 <main>
   <LayoutFlexColumn gap="10px">
-    <input placeholder="Ya name" type="text" />
-    <input
-      placeholder="Ya email (so like I can slide in ur inbox)"
-      type="email"
-    />
-    <input placeholder="Ya website" type="text" />
-    <textarea placeholder="Whaddya wanna talk bout :3" name="message" id=""
+    <input placeholder="Your name" type="text" />
+    <input placeholder="Your email" type="email" />
+    <input placeholder="Your website" type="text" />
+    <textarea placeholder="What do you wanna talk about" name="message" id=""
     ></textarea>
     <br />
-    <button>Touch me.</button>
+    <button>Get In Touch</button>
   </LayoutFlexColumn>
 </main>
 
