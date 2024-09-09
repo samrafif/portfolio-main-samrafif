@@ -4,13 +4,13 @@
 
   import { writable } from "svelte/store";
   import { onMount } from "svelte";
-  import { listProjects } from "../db";
+  import { listPublishedBlogs } from "../db";
 
   // NOTE: THIS FEELS ILLEGAL
   let projects = writable([]);
 
   onMount(() => {
-    listProjects().then((blogList) => {
+    listPublishedBlogs().then((blogList) => {
       projects.set(blogList);
     });
   });
