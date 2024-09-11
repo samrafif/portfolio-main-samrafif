@@ -12,6 +12,7 @@ import {
 import { firestore } from "./firebase";
 
 const article_ref = collection(firestore, "blog-articles");
+const contact_ref = collection(firestore, "contact-messages");
 
 async function listDocs(ref, query_selector = null) {
   let queryObj = query_selector ? query(ref, query_selector) : query(ref);
@@ -43,7 +44,7 @@ export async function createArticle(
 ) {
   const timeElapsed = Date.now();
   const today = new Date(timeElapsed);
-  let rn_date_str = today.toLocaleDateString();
+  let rn_date_str = today.toDateString();
   await setDoc(
     doc(
       article_ref,
@@ -93,4 +94,30 @@ export async function editArticle(
     type,
     tags,
   });
+}
+
+export async function createContactMessage(name, email, website, message) {
+  const timeElapsed = Date.now();
+  const today = new Date(timeElapsed);
+  let rn_date_str = today.toDateString();
+  let rn_datetime_str = today.toISOString();
+  await setDoc(
+    doc(
+      contact_ref,
+      name.replaceAll(" ", "-").toLowerCase() +
+        "-" +
+        rn_datetime_str.replaceAll(":", "-")
+    ),
+    {
+      name,
+      email,
+      website,
+      message,
+      write_date: rn_date_str,
+    }
+  );
+}
+
+export async function listContactMessages() {
+  return listDocs(contact_ref);
 }

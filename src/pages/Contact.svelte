@@ -4,6 +4,32 @@
   import ContactForm from "../components/ContactForm.svelte";
   import LayoutFlexRow from "../components/LayoutFlexRow.svelte";
   import LayoutFlexColumn from "../components/LayoutFlexColumn.svelte";
+  import { writable } from "svelte/store";
+  import { createContactMessage } from "../db";
+  import Icon from "@iconify/svelte";
+
+  let contactMessageState = writable({
+    name: "",
+    email: "",
+    website: "",
+    message: "",
+  });
+
+  function onClick() {
+    createContactMessage(
+      $contactMessageState.name,
+      $contactMessageState.email,
+      $contactMessageState.website,
+      $contactMessageState.message
+    );
+
+    contactMessageState.set({
+      name: "",
+      email: "",
+      website: "",
+      message: "",
+    });
+  }
 </script>
 
 <main>
@@ -14,7 +40,7 @@
       <!-- TODO: Use fancy stores for this rather than repetitive CSS  -->
       <!-- TODO: Standardize class names  -->
       <div class="contact-body-container">
-        <ContactForm />
+        <ContactForm {contactMessageState} {onClick} />
         <LayoutFlexColumn>
           <h1>Lets talk.. like for a job</h1>
           <p>
@@ -24,13 +50,43 @@
           </p>
           <br />
           <p><b>Find more of me here</b></p>
-          <LayoutFlexRow>
+          <LayoutFlexRow wrap="wrap">
             <!-- TODO: Extract to component -->
-            <button>GH</button>
-            <button>IG</button>
-            <button>LN</button>
-            <button>BC</button>
-            <button>DC</button>
+            <button
+              ><Icon
+                height="30px"
+                style="padding: 0.3rem 0 0.3rem;"
+                icon="mdi:github"
+              /></button
+            >
+            <button
+              ><Icon
+                height="30px"
+                style="padding: 0.3rem 0 0.3rem;"
+                icon="mdi:instagram"
+              /></button
+            >
+            <button
+              ><Icon
+                height="30px"
+                style="padding: 0.3rem 0 0.3rem;"
+                icon="mdi:linkedin"
+              /></button
+            >
+            <button
+              ><Icon
+                height="30px"
+                style="padding: 0.3rem 0 0.3rem;"
+                icon="icon-park-outline:dribble"
+              /></button
+            >
+            <button
+              ><Icon
+                height="30px"
+                style="padding: 0.3rem 0 0.3rem;"
+                icon="ic:baseline-discord"
+              /></button
+            >
           </LayoutFlexRow>
         </LayoutFlexColumn>
       </div>
