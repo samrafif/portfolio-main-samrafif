@@ -22,6 +22,10 @@
 </main>
 
 <style>
+  h2 {
+    margin-bottom: 0;
+  }
+
   p {
     margin: 0;
   }

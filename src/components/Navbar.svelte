@@ -3,10 +3,40 @@
   import { location } from "svelte-spa-router";
   import active from "svelte-spa-router/active";
   import { writable } from "svelte/store";
-  import { fly } from "svelte/transition";
+  import { Motion } from "svelte-motion";
+  import { onMount } from "svelte";
+
   export let paths;
   let paths_filtered = [];
-  let open = writable("");
+  let open = "";
+  let i = 0;
+
+  /** Dispatch event on click outside of node */
+  export function clickOutside(node) {
+    const handleClick = (event) => {
+      if (node && !node.contains(event.target) && !event.defaultPrevented) {
+        node.dispatchEvent(new CustomEvent("click_outside", node));
+      }
+    };
+
+    document.addEventListener("click", handleClick, true);
+
+    return {
+      destroy() {
+        document.removeEventListener("click", handleClick, true);
+      },
+    };
+  }
+
+  onMount(() => {
+    let mql = window.matchMedia("screen and (max-width: 850px)");
+    let mqlListener = (v) => {
+      if (v.matches) {
+        i = -10;
+      }
+    };
+    mql.addListener(mqlListener);
+  });
 
   $: {
     paths_filtered = [];
@@ -20,32 +50,53 @@
     // console.log(paths_filtered);
     // console.log($location);
   }
+
   function toggleNav() {
-    if ($open == "") {
-      open.set("open");
+    if (open == "") {
+      i = 0;
+      open = "open";
     } else {
-      open.set("");
+      i = -10;
+      setTimeout(() => {
+        open = "";
+      }, 1000);
     }
-    console.log($open);
+    console.log(open);
   }
 </script>
 
 <div class="navbar-container">
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div on:click={toggleNav} class="burger">
+  <div
+    use:clickOutside
+    on:click_outside={() => {
+      if (open) toggleNav();
+    }}
+    on:click={toggleNav}
+    class="burger"
+  >
     <div class="bar"></div>
     <div class="bar"></div>
     <div class="bar"></div>
   </div>
-  <div class="component-navbar {$open}">
-    {#each paths_filtered as path, i}
-      <!-- TODO: Use svelte-spa-router's provided active method, rather than this crap -->
-      <div class="navbar-nav-item {path.active}">
-        <a href="#{path.path}">{path.text}</a>
-      </div>
-    {/each}
-  </div>
+  <Motion
+    animate={{ y: i, opacity: i + 10 }}
+    transition={{ duration: 0.5 }}
+    let:motion
+  >
+    <div class="component-navbar {open}" use:motion>
+      {#each paths_filtered as path, i}
+        <!-- TODO: Use svelte-spa-router's provided active method, rather than this crap -->
+        <a href="#{path.path}">
+          <div class="navbar-nav-item {path.active}">
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <a>{path.text}</a>
+          </div></a
+        >
+      {/each}
+    </div>
+  </Motion>
 </div>
 
 <style>

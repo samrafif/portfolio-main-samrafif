@@ -12,7 +12,9 @@
       <div class="readme-list" in:fly={{ y: -50, duration: 1000, delay: 500 }}>
         <div class="readme-item">
           <h2 class="readme-header-title">
-            Development: <strong>Github</strong>
+            Development: <strong
+              ><a href="https://github.com/samrafif">Github</a></strong
+            >
           </h2>
           <p>
             I am a novice fullstack and embedded developer, okayly experienced
@@ -23,17 +25,23 @@
         </div>
         <div class="readme-item">
           <h2 class="readme-header-title">
-            Design: <strong>Dribble</strong>
+            Design: <strong
+              ><a href="https://dribbble.com/abrisamss_rafif">Dribble</a
+              ></strong
+            >
           </h2>
           <p>
-            I am a novice fullstack and embedded developer, okayly experienced
-            in a few languages; Python, Javascript, Typescript, C, C++, and a
-            bit of tooling but I am always hungry for knowledge. I have been
-            coding for about 3 years.
+            I am learning visual and product design, still working on it. but
+            atleast i have basic experience with Figma and...figma prototyping
+            stuff, mostly figma really
           </p>
         </div>
         <div class="readme-item">
-          <h2 class="readme-header-title">Machine Learning</h2>
+          <h2 class="readme-header-title">
+            Machine Learning: <strong
+              ><a href="https://huggingface.co/samwoof">Huggingface</a></strong
+            >
+          </h2>
           <p>
             I am a novice fullstack and embedded developer, okayly experienced
             in a few languages; Python, Javascript, Typescript, C, C++, and a
@@ -43,13 +51,14 @@
         </div>
         <div class="readme-item">
           <h2 class="readme-header-title">
-            Natural Language Processing: <strong>Huggingface</strong>
+            Natural Language Processing: <strong
+              ><a href="https://huggingface.co/samwoof">Huggingface</a></strong
+            >
           </h2>
           <p>
-            I am a novice fullstack and embedded developer, okayly experienced
-            in a few languages; Python, Javascript, Typescript, C, C++, and a
-            bit of tooling but I am always hungry for knowledge. I have been
-            coding for about 3 years.
+            I am currently learning a bit on Machine Learning, more spesifically
+            Deep Learning and even more spesifically NLP, cuz LLMs go brrrrrr.
+            Abt 1 yr experience
           </p>
         </div>
       </div>

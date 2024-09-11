@@ -126,7 +126,10 @@
     font-weight: 500;
     border-radius: 5px;
   }
-  input,
+  input {
+    width: 35%;
+    padding: 1rem;
+  }
   textarea,
   .preview {
     padding: 1rem;

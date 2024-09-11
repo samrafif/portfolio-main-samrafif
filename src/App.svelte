@@ -9,12 +9,13 @@
   import Contact from "./pages/Contact.svelte";
   import { Canvas } from "@threlte/core";
   import ThrelteDynamicBackground from "./components/ThrelteDynamicBackground.svelte";
+  import Icon from "@iconify/svelte";
   import AdminPortal from "./pages/AdminPortal.svelte";
   import BlogWriter from "./pages/BlogWriter.svelte";
   import BlogViewer from "./pages/BlogViewer.svelte";
   import MediaQuery from "./components/MediaQuery.svelte";
 
-  let navbar_paths = [
+  const navbar_paths = [
     { path: "/", text: "Main" },
     { path: "/readme", text: "ReadMe" },
     { path: "/blog", text: "Blog" },
@@ -24,12 +25,20 @@
   const routes = {
     "/": Home,
     "/blog": Blogs,
+    "/blog/:blog_id": BlogViewer,
+    "/blog/tag/:tag": Blogs,
     "/readme": ReadMe,
     "/contact": Contact,
     "/admin": AdminPortal,
     "/admin/blog-writer/:blog_id?": BlogWriter,
-    "/blog/:blog_id": BlogViewer,
     "/*": Page404,
+  };
+
+  const social_urls = {
+    gh: "https://github.com/samrafif",
+    ig: "https://www.instagram.com/briss.sams",
+    rd: "https://www.reddit.com/user/Mallow_Malo/",
+    ln: "https://www.linkedin.com/in/abrisam-rafif-maulana-32a987236/",
   };
 </script>
 
@@ -44,18 +53,26 @@
     <LayoutFlexRow gap="18px">
       <MediaQuery query="screen and (max-width: 850px)" let:matches>
         {#if matches}
-          <a class="social-link" href="#/">GH</a>
-          <a class="social-link" href="#/">IG</a>
-          <a class="social-link" href="#/">RD</a>
-          <a class="social-link" href="#/">LK</a>
+          <a class="social-link" href={social_urls.gh}
+            ><Icon class="social-icon" height="30px" icon="mdi:github" /></a
+          >
+          <a class="social-link" href={social_urls.ig}
+            ><Icon class="social-icon" height="30px" icon="mdi:instagram" /></a
+          >
+          <a class="social-link" href={social_urls.rd}
+            ><Icon class="social-icon" height="30px" icon="mdi:reddit" /></a
+          >
+          <a class="social-link" href={social_urls.ln}
+            ><Icon class="social-icon" height="30px" icon="mdi:linkedin" /></a
+          >
         {/if}
       </MediaQuery>
       <MediaQuery query="screen and not (max-width: 850px)" let:matches>
         {#if matches}
-          <a class="social-link" href="#/">GTHB</a>
-          <a class="social-link" href="#/">INST</a>
-          <a class="social-link" href="#/">RDDT</a>
-          <a class="social-link" href="#/">LKDN</a>
+          <a class="social-link" href={social_urls.gh}>GTHB</a>
+          <a class="social-link" href={social_urls.ig}>INST</a>
+          <a class="social-link" href={social_urls.rd}>RDDT</a>
+          <a class="social-link" href={social_urls.ln}>LKDN</a>
         {/if}
       </MediaQuery>
     </LayoutFlexRow>
@@ -67,6 +84,10 @@
 </main>
 
 <style>
+  .social-icon {
+    color: var(--text-color);
+  }
+
   .canvas-container {
     /* visibility: hidden; */
     position: absolute;
