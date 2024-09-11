@@ -1,6 +1,6 @@
 <script>
   import { OnMount } from "fractils";
-  import LoginModal from "../components/LoginModal.svelte";
+  import LoginModal from "../components/LoginForm.svelte";
   import { fly } from "svelte/transition";
   import { writable } from "svelte/store";
 
@@ -8,6 +8,7 @@
   import { onMount } from "svelte";
   import LayoutFlexColumn from "../components/LayoutFlexColumn.svelte";
   import BlogList from "../components/BlogList.svelte";
+  import ContactMessagesList from "../components/ContactMessagesList.svelte";
 
   onMount(() => {});
 
@@ -38,6 +39,7 @@
           <h1>Blogs</h1>
           <BlogList />
           <h1>Contact Messages</h1>
+          <ContactMessagesList />
         </LayoutFlexColumn>
       {:else}
         <div class="login-modal">
