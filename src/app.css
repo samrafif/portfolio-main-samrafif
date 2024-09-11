@@ -9,6 +9,17 @@
   line-height: 1.5;
 }
 
+::-moz-selection {
+  /* Code for Firefox */
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+}
+
+::selection {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+}
+
 :root {
   --cursor-color: white;
   --bg-color: black;
