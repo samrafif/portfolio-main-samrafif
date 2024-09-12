@@ -1,11 +1,7 @@
-@font-face {
-  font-family: clashDisplay;
-  src: url("assets/ClashDisplay-Variable.ttf");
-  font-display: auto;
-}
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
-  font-family: clashDisplay;
+  font-family: "Montserrat", sans-serif;
   line-height: 1.5;
 }
 

@@ -13,6 +13,12 @@ import { firestore } from "./firebase";
 
 const article_ref = collection(firestore, "blog-articles");
 const contact_ref = collection(firestore, "contact-messages");
+const get_datestr = (today) => {
+  return `${("0" + today.getDate()).slice(-2)}/${(
+    "0" +
+    (today.getMonth() + 1)
+  ).slice(-2)}/${today.getFullYear()}`;
+};
 
 async function listDocs(ref, query_selector = null) {
   let queryObj = query_selector ? query(ref, query_selector) : query(ref);
@@ -42,12 +48,12 @@ export async function createArticle(
   markdown_body,
   tags
 ) {
-  const timeElapsed = Date.now();
-  const today = new Date(timeElapsed);
-  let rn_date_str = today.toDateString();
+  const today = new Date();
+  let rn_date_str = get_datestr(today);
   await setDoc(
     doc(
       article_ref,
+      // TODO: Make a proper url-friendly string converter
       title.replaceAll(" ", "-").toLowerCase() +
         "-" +
         rn_date_str.replaceAll("/", "-")
@@ -97,9 +103,8 @@ export async function editArticle(
 }
 
 export async function createContactMessage(name, email, website, message) {
-  const timeElapsed = Date.now();
-  const today = new Date(timeElapsed);
-  let rn_date_str = today.toDateString();
+  const today = new Date();
+  let rn_date_str = get_datestr(today);
   let rn_datetime_str = today.toISOString();
   await setDoc(
     doc(

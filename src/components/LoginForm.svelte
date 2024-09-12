@@ -17,8 +17,14 @@
 <main>
   <form>
     <LayoutFlexColumn gap="16px">
-      <input bind:value={loginValues.email} placeholder="Email" type="email" />
       <input
+        autocomplete="email"
+        bind:value={loginValues.email}
+        placeholder="Email"
+        type="email"
+      />
+      <input
+        autocomplete="current-password"
         bind:value={loginValues.password}
         placeholder="Password"
         type="password"
