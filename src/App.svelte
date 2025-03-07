@@ -109,7 +109,7 @@
   }
 
   .main-content {
-    margin-left: 7%;
+    margin-left: 7%; /* TODO: Questionable */
     margin-top: 4rem;
     color: var(--text-color);
   }

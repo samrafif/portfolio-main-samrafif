@@ -6,10 +6,10 @@
 <main>
   <OnMount>
     <div class="readme-container">
-      <div in:fly={{ y: -50, duration: 1000 }}>
+      <div in:fly={{ y: -50, duration: 500 }}>
         <h1>ReadMe</h1>
       </div>
-      <div class="readme-list" in:fly={{ y: -50, duration: 1000, delay: 500 }}>
+      <div class="readme-list" in:fly={{ y: -50, duration: 500, delay: 200 }}>
         <div class="readme-item">
           <h2 class="readme-header-title">
             Development: <strong

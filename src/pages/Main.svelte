@@ -19,7 +19,7 @@
           </Typewriter>
           <div
             style="margin-top: 0.5rem;"
-            in:fly={{ y: -50, duration: 1000, delay: 1500 }}
+            in:fly={{ y: -50, duration: 1000, delay: 500 }}
           >
             <Typewriter mode="loop">
               <p class="skill-text">Web Developer</p>
@@ -33,13 +33,13 @@
         </div>
         <img
           class="main-header-img"
-          in:fly={{ y: -50, duration: 1000, delay: 2000 }}
+          in:fly={{ y: -50, duration: 1000, delay: 1000 }}
           src={MainImg}
           alt=""
         />
         <div
           class="detail-text"
-          in:fly={{ y: -50, duration: 1000, delay: 2000 }}
+          in:fly={{ y: -50, duration: 1000, delay: 1000 }}
         >
           <p>
             I have 3-4 years total of programming experience and 1+ years of
