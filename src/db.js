@@ -54,9 +54,13 @@ export async function createArticle(
     doc(
       article_ref,
       // TODO: Make a proper url-friendly string converter
-      title.replaceAll(" ", "-").toLowerCase() +
-        "-" +
-        rn_date_str.replaceAll("/", "-")
+      (
+        title
+          .replaceAll(" ", "-")
+          .replaceAll(":", "-")
+          .replaceAll(",", "-")
+          .toLowerCase() + "-"
+      ).replaceAll("--", "-") + rn_date_str.replaceAll("/", "-")
     ),
     {
       title,
