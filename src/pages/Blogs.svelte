@@ -18,10 +18,13 @@
 
 <main>
   <OnMount>
-    <div in:fly={{ y: -50, duration: 1000 }}>
+    <div in:fly={{ y: -50, duration: 0 }}>
       <div class="layout-flex-column">
         {#each $projects as project, i}
-          <div class="project-item">
+          <div
+            class="project-item"
+            in:fly={{ y: -50 - 100 * i, duration: 500, delay: 50 * i }}
+          >
             <a href="#/blog/{project.id}"
               ><h1 class="project-title">{project.data.title}</h1></a
             >
