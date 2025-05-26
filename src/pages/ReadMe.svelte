@@ -20,7 +20,7 @@
             I am a novice fullstack and embedded developer, okayly experienced
             in a few languages; Python, Javascript, Typescript, C, C++, and a
             bit of tooling but I am always hungry for knowledge. I have been
-            coding for about 3 years.
+            coding for about 7 years.
           </p>
         </div>
         <div class="readme-item">
