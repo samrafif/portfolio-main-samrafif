@@ -44,9 +44,7 @@
         <LayoutFlexColumn>
           <h1>Lets talk.. like for a job</h1>
           <p>
-            I will get your project done, buuuuuuuut...
-            <br />
-            I'll give what you paid for sooo ehem pay me lots baby
+            I will get your project done, god willing :3
           </p>
           <br />
           <p><b>Find more of me here</b></p>
