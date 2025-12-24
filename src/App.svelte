@@ -56,12 +56,6 @@
           <a class="social-link" href={social_urls.gh}
             ><Icon class="social-icon" height="30px" icon="mdi:github" /></a
           >
-          <a class="social-link" href={social_urls.ig}
-            ><Icon class="social-icon" height="30px" icon="mdi:instagram" /></a
-          >
-          <a class="social-link" href={social_urls.rd}
-            ><Icon class="social-icon" height="30px" icon="mdi:reddit" /></a
-          >
           <a class="social-link" href={social_urls.ln}
             ><Icon class="social-icon" height="30px" icon="mdi:linkedin" /></a
           >
@@ -70,8 +64,6 @@
       <MediaQuery query="screen and not (max-width: 850px)" let:matches>
         {#if matches}
           <a class="social-link" href={social_urls.gh}>GTHB</a>
-          <a class="social-link" href={social_urls.ig}>INST</a>
-          <a class="social-link" href={social_urls.rd}>RDDT</a>
           <a class="social-link" href={social_urls.ln}>LKDN</a>
         {/if}
       </MediaQuery>

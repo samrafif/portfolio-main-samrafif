@@ -12,15 +12,15 @@
       <div class="readme-list" in:fly={{ y: -50, duration: 500, delay: 200 }}>
         <div class="readme-item">
           <h2 class="readme-header-title">
-            Development: <strong
+            Software Development: <strong
               ><a href="https://github.com/samrafif">Github</a></strong
             >
           </h2>
           <p>
-            I am a novice fullstack and embedded developer, okayly experienced
+            I am a self-taught fullstack and embedded developer, okayly experienced
             in a few languages; Python, Javascript, Typescript, C, C++, and a
             bit of tooling but I am always hungry for knowledge. I have been
-            coding for about 7 years.
+            coding for about 6 years.
           </p>
         </div>
         <div class="readme-item">
@@ -38,26 +38,13 @@
         </div>
         <div class="readme-item">
           <h2 class="readme-header-title">
-            Machine Learning: <strong
-              ><a href="https://huggingface.co/samwoof">Huggingface</a></strong
-            >
-          </h2>
-          <p>
-            I am a novice fullstack and embedded developer, okayly experienced
-            in a few languages; Python, Javascript, Typescript, C, C++, and a
-            bit of tooling but I am always hungry for knowledge. I have been
-            coding for about 3 years.
-          </p>
-        </div>
-        <div class="readme-item">
-          <h2 class="readme-header-title">
             Natural Language Processing: <strong
               ><a href="https://huggingface.co/samwoof">Huggingface</a></strong
             >
           </h2>
           <p>
             I am currently learning a bit on Machine Learning, more spesifically
-            Deep Learning and even more spesifically NLP, cuz LLMs go brrrrrr.
+            Deep Learning and even more specifically NLP, cuz LLMs go brrrrrr.
             Abt 1 yr experience
           </p>
         </div>

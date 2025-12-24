@@ -42,7 +42,7 @@
           in:fly={{ y: -50, duration: 1000, delay: 1000 }}
         >
           <p>
-            I have 3-4 years total of programming experience and 1+ years of
+            I have 6 years total of programming experience and 1+ years of
             experience with AI. <br /><br /> I understand the basic math behind Neural
             Networks; Calculus, Linear Algebra and the like. Oh yeah and photography.
           </p>
