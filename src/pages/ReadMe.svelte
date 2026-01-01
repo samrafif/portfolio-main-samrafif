@@ -24,16 +24,16 @@
     Design: <strong><a href="https://dribbble.com/abrisamss_rafif">Dribbble</a></strong>
   </h2>
   <p>
-    Exploring the world of visual and product design. Currently, my workflow is "mostly Figma really"—from wireframes to prototyping. I’m still sharpening my eye.
+    Exploring the world of visual and product design. Currently, my workflow is "mostly Figma really", from wireframes to prototyping. I’m still sharpening my eye.
   </p>
 </div>
 
 <div class="readme-item">
   <h2 class="readme-header-title">
-    Natural Language Processing: <strong><a href="https://huggingface.co/samwoof">Hugging Face</a></strong>
+    Natural Language Processing: <strong><a href="https://huggingface.co/samwoof">Huggingface</a></strong> {"/"} <strong><a href="https://github.com/samrafif">GitHub</a></strong>
   </h2>
   <p>
-    Diving deep into Machine Learning, specifically NLP—because let’s be honest, LLMs go brrrrr. I’ve been experimenting with Deep Learning for about a year now, trying to figure out what’s actually happening under the hood of them.
+    Diving deep into Machine Learning, specifically NLP, because let’s be honest, LLMs go brrrrr. I’ve been experimenting with Deep Learning for about a year now, trying to figure out what’s actually happening under the hood of them.
   </p>
 </div>
 <div class="readme-item">
