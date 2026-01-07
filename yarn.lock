@@ -766,10 +766,10 @@
     three-instanced-uniforms-mesh "^0.49.0"
     troika-three-utils "^0.49.0"
 
-"@threlte/core@^7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@threlte/core/-/core-7.3.1.tgz#6fd7ed7d5f7757b953713326c268aec19a9c3e34"
-  integrity sha512-qGfpboBL5PWYGqPIpnRmvp0ssW551ULRZsXRpWAwSPWGughiOSL9dBZjiwWQTQHUFMEErgquo6hbFJCuWE0uTg==
+"@threlte/core@^7.3.2":
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/@threlte/core/-/core-7.3.2.tgz#d1dee00a3ffb5bb0ad557194db3d739ee46d04a9"
+  integrity sha512-yDktfsoZOCKx8AIbfgfzmvOdzvaOuWybgFGn+4MxBhI21euS80KZQAoy7RXXoOP1o/THmFxPt0y05tzVRPuufA==
   dependencies:
     mitt "^3.0.1"
 
