@@ -773,10 +773,10 @@
   dependencies:
     mitt "^3.0.1"
 
-"@threlte/extras@^8.11.5":
-  version "8.11.5"
-  resolved "https://registry.yarnpkg.com/@threlte/extras/-/extras-8.11.5.tgz#20e8157661073610ccc63cfdac8ef0f40979245c"
-  integrity sha512-pskCysV52Uul6dKTvNjJdoeoRx1IgTvlv8Z9xYiBPKA5W62vQaRxMAFagwTZuyF7s4m1oDDD2DUSNkWFWohr2Q==
+"@threlte/extras@^8.12.2":
+  version "8.12.2"
+  resolved "https://registry.yarnpkg.com/@threlte/extras/-/extras-8.12.2.tgz#5009e78ce5a9b032c28d375053f4b1144faf0ab1"
+  integrity sha512-Li6KHHTj5HZlG6U/fMMuROn+miuJGFGISIDhzLCtE/RHLLpqd/Ij5Ra6Hx+Vzi0skOVQE7eRXtLoXswM4JRA9g==
   dependencies:
     "@threejs-kit/instanced-sprite-mesh" "^2.4.6"
     three-mesh-bvh "^0.7.1"
